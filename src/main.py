@@ -10,7 +10,7 @@ def process_tokens(tokens: list) -> float:
         "+": lambda n1, n2: n1 + n2,
         "-": lambda n1, n2: n1 - n2,
         "*": lambda n1, n2: n1 * n2,
-        "/": lambda n1, n2: n1 // n2,
+        "/": lambda n1, n2: n1 / n2,
         "//": lambda n1, n2: n1 // n2,
         "%": lambda n1, n2: n1 % n2,
         "**": lambda n1, n2: n1 ** n2,
