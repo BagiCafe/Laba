@@ -48,12 +48,13 @@ def process_tokens(tokens: list) -> float:
     if len(stack) != 1:
         print("Ошибка: Выражение содержит лишние числа")
         return None
+
     return stack[0]
 
 
 def calculator_expression(expr: str) -> float:  # Работаем с токенами
     tokens = expr.replace('(', '').replace(')', '')  # Игнорируем скобки
-    tokens = tokens.split(' ')  # Делим выражение на токены
+    tokens = tokens.split()  # Делим выражение на токены
     result = process_tokens(tokens)
 
     if result is None:
@@ -65,6 +66,9 @@ def run():
         if line.strip():  # Проверяем, что строка не пустая
             result = calculator_expression(line.rstrip())
             print(result)
+        else:
+            print("Ошибка: Пустое выражение")
+            print('Обнаружена ошибка')
 
 if __name__ == "__main__":
     run()
